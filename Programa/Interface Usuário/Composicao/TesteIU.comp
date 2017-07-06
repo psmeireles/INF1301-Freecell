@@ -1,0 +1,31 @@
+# Composicao do programa de teste do jogo
+
+[Diretorios]
+
+Nome        =	TesteIU
+PathDefault =	..\Fontes
+err         =	..\Produto
+obj			=	..\Objetos
+c			=	..\Fontes
+h			=	..\Fontes
+def			=	..\Tabelas
+
+[Modulos]
+SequenciaOrdenada
+SequenciaVisivel
+Embaralhamento
+Cartas
+Lista
+EspacosExtras
+InterfaceUsuario
+Partida
+
+[BuildInicio]
+/OUT:..\Produto\TesteIU.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+[BuildFim]
+ArcaboucoTeste.lib
+
+[Fim]

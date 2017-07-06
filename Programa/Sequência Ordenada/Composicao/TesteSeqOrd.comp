@@ -1,0 +1,27 @@
+# Composicao do programa de teste de uma sequencia ordenada
+
+[Diretorios]
+
+Nome        =	TesteSeqOrd
+PathDefault =	..\Fontes
+err         =	..\Produto
+obj			=	..\Objetos
+c			=	..\Fontes
+h			=	..\Fontes
+def			=	..\Tabelas
+
+[Modulos]
+TesteSeqOrd
+SequenciaOrdenada
+Cartas
+Lista
+
+[BuildInicio]
+/OUT:..\Produto\TesteSeqOrd.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+[BuildFim]
+ArcaboucoTeste.lib
+
+[Fim]

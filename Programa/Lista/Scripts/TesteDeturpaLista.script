@@ -1,0 +1,96 @@
+// Script:    TesteDeturpaLista.script
+// Autor:     Pedro Sousa Meireles
+// Data:      24/jun/2017
+// Propósito: Testar verificadores e deturpadores da lista
+//
+
+== Iniciar contadores de passagem
+=inicializarcontadores  "."
+
+== Inicializar valores
+=declararparm   lista0  int 0
+
+
+=declararparm   str0    string  "abcdefg"
+=declararparm   str1    string  "qwerty"
+=declararparm   str2    string  "xxx"
+=declararparm   str3    string  "xpto"
+
+
+=declararparm   OK              int  0
+=declararparm   EstruturaErrada int  5
+
+== Verificar lista NULL
+=verificarlista  lista0	  EstruturaErrada
+=AceitaFalhasAcumuladas 1
+
+== Criar lista
+=criarlista		   lista0   OK
+
+== Verificar lista vazia
+=verificarlista  lista0   OK
+
+== Destruir a lista
+=destruirlista	 lista0
+
+
+== Criar lista
+=criarlista        lista0   OK
+=inselemapos       lista0   str3   OK
+=inselemantes      lista0   str0   OK
+=inselemapos       lista0   str1   OK
+=inselemapos       lista0   str2   OK
+
+== Verificar lista
+=verificarlista  lista0   OK
+
+== Deturpar tipo cabeca
+=deturparlista     lista0   1
+=verificarlista    lista0   EstruturaErrada
+=AceitaFalhasAcumuladas 1
+
+== Destruir a lista
+=destruirlista     lista0
+
+== Criar lista
+=criarlista        lista0   OK
+=inselemapos       lista0   str3   OK
+=inselemantes      lista0   str0   OK
+=inselemapos       lista0   str1   OK
+=inselemapos       lista0   str2   OK
+
+== Verificar lista
+=verificarlista  lista0   OK
+
+== Deturpar origem nulo
+=deturparlista     lista0   2
+=verificarlista  lista0   EstruturaErrada
+=AceitaFalhasAcumuladas 1
+
+== Destruir a lista
+=destruirlista     lista0
+
+== Criar lista
+=criarlista        lista0   OK
+=inselemapos       lista0   str3   OK
+=inselemantes      lista0   str0   OK
+=inselemapos       lista0   str1   OK
+=inselemapos       lista0   str2   OK
+
+== Verificar lista
+=verificarlista  lista0   OK
+
+== Deturpar corrente nulo
+=deturparlista     lista0   3
+=verificarlista  lista0   EstruturaErrada
+=AceitaFalhasAcumuladas 1
+
+== Destruir a lista
+=destruirlista     lista0
+
+=verificarmemoria           // vazia
+=obternumeroespacosalocados  8	// a segunda deturpacao faz com que
+// a destruir lista nao funcione direito, restando 8 espacos alocados
+
+
+// fim

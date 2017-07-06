@@ -1,0 +1,27 @@
+# Composicao do programa de teste de uma sequencia visivel
+
+[Diretorios]
+
+Nome        =	TesteSeqVis
+PathDefault =	..\Fontes
+err         =	..\Produto
+obj			=	..\Objetos
+c			=	..\Fontes
+h			=	..\Fontes
+def			=	..\Tabelas
+
+[Modulos]
+TesteSeqVis
+SequenciaVisivel
+Cartas
+Lista
+
+[BuildInicio]
+/OUT:..\Produto\TesteSeqVis.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+[BuildFim]
+ArcaboucoTeste.lib
+
+[Fim]

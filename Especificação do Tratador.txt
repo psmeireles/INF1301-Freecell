@@ -1,0 +1,3 @@
+Foi criado um tratador para o caso dos elementos inicial, corrente e final de
+uma lista não apontarem para a cabeça da lista à qual pertencem. O tratador 
+refaz essas conexões.

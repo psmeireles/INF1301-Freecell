@@ -1,0 +1,60 @@
+// Script:    TesteEmbaralhamento.script
+// Autor:     Pedro Sousa Meireles
+// Data:      01/mai/2017
+// Propósito: Testar o módulo embaralhamento
+//
+
+== Inicializar valores
+=declararparm   baralho0  int 0
+=declararparm   baralho1  int 1
+
+=declararparm	lista0	  int 0
+=declararparm	lista1	  int 1
+
+=declararparm   OK               int  0
+=declararparm   BaralhoVazio     int  1
+=declararparm   TamanhoErrado    int  2
+=declararparm   FaltouMemoria    int  3
+=declararparm	BaralhoNaoExiste int  4
+
+=declararparm	ListaNaoExiste	 int  6
+
+== Tentar chamar as funcoes com baralho NULL
+=destruirbaralho  baralho0  
+=embaralhar		  baralho0  BaralhoNaoExiste
+=obterlistacartas baralho0	lista0 	BaralhoNaoExiste
+=obtertam		  baralho0	-1	 	ListaNaoExiste
+=destruirlista	  baralho0	
+
+== Criar o baralho 0
+=criarbaralho    baralho0  OK
+
+== Obter lista de cartas do baralho sem embaralhar
+=obterlistacartas baralho0  lista0  OK
+
+== Checar tamanho errado e depois certo
+=obtertam		  lista0	12	    OK 
+=recuperar	
+=obtertam		  lista0	52		OK
+
+== Destruir baralho 0 e a lista 0
+=destruirbaralho  baralho0
+=destruirlista	  lista0
+
+== Criar o baralho 1
+=criarbaralho   baralho1  OK
+
+== Embaralhar baralho 1 e obter suas cartas
+=embaralhar   		baralho1  OK
+=obterlistacartas	baralho1  lista1  OK
+
+== Obter tamanho errado e depois certo depois de embaralhar
+=obtertam	lista1   43   OK
+=recuperar
+=obtertam	lista1	 52	  OK
+
+== Destruir baralho 1 e a lista 1
+=destruirbaralho	baralho1
+=destruirlista		lista1
+
+// fim

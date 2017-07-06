@@ -1,0 +1,198 @@
+// Script:    TesteSeqOrd.script
+// Autores:   Marcelo Costalonga Cardoso
+//			  Pedro Sousa Meireles
+// Data:      05/abr/2017
+// Prop�sito: Testar superficialmente o modulo sequencia ordenada
+
+== Inicializar valores
+=declararparm   seqord0  int 0
+=declararparm   seqord1  int 1
+=declararparm   seqord2  int 2
+=declararparm   seqord3  int 3
+=declararparm   seqord4  int 4
+=declararparm   seqord5  int 5
+=declararparm   seqord6  int 6
+
+=declararparm   lista0   int 0
+=declararparm	lista1	 int 1
+=declararparm	lista2	 int 2
+=declararparm	lista3	 int 3
+=declararparm	lista4	 int 4
+=declararparm	lista5	 int 5
+=declararparm	lista6	 int 6
+=declararparm	lista7	 int 7
+=declararparm	lista8	 int 8
+=declararparm	lista9	 int 9
+
+=declararparm   OK                 int  0
+=declararparm   ListaVazia         int  1
+=declararparm   ListaNaoCheia      int  2
+=declararparm   FaltouMemoria      int  3
+=declararparm   ImpossInserirCarta int  4
+=declararparm   SeqOrdNaoExiste    int  6
+=declararparm   ListaNaoExiste 	   int  7
+
+=resetteste
+
+== Testar funcoes passando NULL
+=inserircarta		seqord0	lista0  SeqOrdNaoExiste
+=inserircartalista	lista0	"P9"	6
+=obterlistacartas   seqord0 lista0  SeqOrdNaoExiste
+
+== Criar a sequencia ordenada 0
+=criarseqord     seqord0      OK
+
+== Testar inserir carta passando lista NULL
+=inserircarta	 seqord0	lista0	ListaNaoExiste
+
+== Criar lista 0 com 1 carta
+=criarlistacartas  lista0  OK
+=inserircartalista lista0  "CA"  OK
+
+== Inserir carta "certa" em sequencia ordenada vazia
+=inserircarta seqord0  lista0   OK
+
+== Criar a sequencia ordenada 1
+=criarseqord     seqord1      OK
+
+== Criar lista 1 com 1 carta
+=criarlistacartas     lista1  OK
+=inserircartalista	  lista1  "C8"  OK
+
+== Inserir carta "errada" em sequencia ordenada vazia
+=inserircarta seqord1  lista1 ImpossInserirCarta
+
+== Criar lista 2 com 1 carta
+=criarlistacartas     lista2  OK
+=inserircartalista	  lista2  "P2"  OK
+
+== Inserir carta em sequencia ordenada sobre carta de outro naipe
+=inserircarta seqord0  lista2 ImpossInserirCarta
+
+== Inserir carta em sequencia ordenada sobre carta não antecessora
+=inserircarta seqord0  lista1 ImpossInserirCarta
+
+== Destruir sequencias ordenadas 0 e 1
+=destruirseqord  seqord0
+
+== Criar lista 4 com 2 cartas
+=criarlistacartas lista4  OK
+=inserircartalista	  lista4  "C3"  OK
+=inserircartalista	  lista4  "P2"  OK
+
+== Criar lista 5 com 1 carta 
+=criarlistacartas 	  lista5  OK
+=inserircartalista	  lista5  "OA"  OK
+
+== Criar lista 6 com 1 carta 
+=criarlistacartas 	  lista6  OK
+=inserircartalista	  lista6  "P2"  OK
+
+== Criar lista 7 com 1 carta 
+=criarlistacartas 	  lista7  OK
+=inserircartalista	  lista7  "P2"  OK
+
+== Criar sequencias ordenada 2 (vazia), 3 (A preto) e 4 (2 vermelho)
+=criarseqord  	   seqord2  OK
+=criarseqord  	   seqord3  OK
+=criarlistacartas  lista8   OK
+=inserircartalista lista8   "PA"    OK
+=inserircarta	   seqord3  lista8  OK
+=criarseqord       seqord4  OK
+=criarlistacartas  lista9   OK
+=inserircartalista lista9   "CA"    OK
+=inserircarta	   seqord4  lista9  OK
+=criarlistacartas  lista9   OK
+=inserircartalista lista9   "C2"    OK
+=inserircarta	   seqord4  lista9  OK
+
+== Inserir 2 cartas em sequencia ordenada vazia
+=inserircarta  seqord2  lista4  ImpossInserirCarta
+
+== Inserir 2 cartas em sequencia ordenada nao vazia
+=inserircarta  seqord3  lista4  ImpossInserirCarta
+
+== Inserir 1 carta "certa" em sequencia ordenada vazia
+=inserircarta  seqord2  lista5  OK
+
+== Inserir 1 carta "certa" em sequencia ordenada nao vazia
+=inserircarta  seqord3  lista6  OK
+
+== Inserir 1 carta com simbolo, cor "certo" e naipe "errado" em sequencia ordenada nao vazia
+=inserircarta  seqord2  lista7  	ImpossInserirCarta
+
+== Verifica sequencia ordenada que nao contem as 13 cartas de um naipe
+=verifseqord   seqord1  ListaNaoCheia
+
+== Destruir listas e sequencias ordenadas
+=destruirseqord seqord1
+=destruirseqord seqord2
+=destruirseqord seqord3
+=destruirseqord seqord4
+=destruirlistacartas lista1
+=destruirlistacartas lista2
+=destruirlistacartas lista4
+=destruirlistacartas lista7
+
+== Criar sequencia ordenada 4 (totalmente cheia)
+=criarseqord  	  seqord5  OK
+=criarlistacartas  lista0  OK
+=inserircartalista lista0  "EA"   OK
+=inserircarta	   seqord5 lista0 OK
+=criarlistacartas   lista0  OK
+=inserircartalista lista0  "E2"   OK
+=inserircarta	   seqord5 lista0 OK
+=criarlistacartas   lista0  OK
+=inserircartalista lista0  "E3"   OK
+=inserircarta	   seqord5 lista0 OK
+=criarlistacartas   lista0  OK
+=inserircartalista lista0  "E4"   OK
+=inserircarta	   seqord5 lista0 OK
+=criarlistacartas   lista0  OK
+=inserircartalista lista0  "E5"   OK
+=inserircarta	   seqord5 lista0 OK
+=criarlistacartas   lista0  OK
+=inserircartalista lista0  "E6"   OK
+=inserircarta	   seqord5 lista0 OK
+=criarlistacartas   lista0  OK
+=inserircartalista lista0  "E7"   OK
+=inserircarta	   seqord5 lista0 OK
+=criarlistacartas   lista0  OK
+=inserircartalista lista0  "E8"   OK
+=inserircarta	   seqord5 lista0 OK
+=criarlistacartas   lista0  OK
+=inserircartalista lista0  "E9"   OK
+=inserircarta	   seqord5 lista0 OK
+=criarlistacartas   lista0  OK
+=inserircartalista lista0  "ED"  OK
+=inserircarta	   seqord5 lista0 OK
+=criarlistacartas   lista0  OK
+=inserircartalista lista0  "EJ"   OK
+=inserircarta	   seqord5 lista0 OK
+=criarlistacartas   lista0  OK
+=inserircartalista lista0  "EQ"   OK
+=inserircarta	   seqord5 lista0 OK
+=criarlistacartas   lista0  OK
+=inserircartalista lista0  "EK"   OK
+=inserircarta	   seqord5 lista0 OK
+
+== Verifica sequencia ordenada que contem as 13 cartas de um naipe
+=verifseqord   seqord5  OK
+
+== Destruir sequencia ordenada 5
+=destruirseqord seqord5
+
+== Tentar inserir lista vazia em sequencia ordenada
+=criarlistacartas lista1  OK 
+=criarseqord	  seqord6 OK
+=inserircarta	  seqord6 lista1 ListaVazia
+
+== Obter lista de cartas da sequencia
+=obterlistacartas seqord6 lista2  OK
+
+== Destruir listas 1 e 2 e seqord 6
+=destruirlistacartas lista1
+=destruirlistacartas lista2
+=destruirseqord 	 seqord6
+
+//fim

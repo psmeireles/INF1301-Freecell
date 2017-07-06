@@ -1,0 +1,16 @@
+					Programação Modular, Relatório individual
+Marcelo Costalonga Cardoso - 1421229
+ 
+ DATA	|	HORAS TRABALHADAS	|   	      		  TIPO TAREFA			|   DESCRIÇÃO TAREFA	
+	|				|							|
+07/06/17|		2		|	 		Codificar módulo		| Módulo de definição e implementação da Partida.
+11/06/17|		2		|	  		Codificar módulo		| Módulos de definição da Partida.
+14/06/17|		2		|	  	  	Codificar módulo		| Início da implementação da função Jogar do módulo Partida.c
+16/06/17|		2		|	  	   	Codificar módulo		| Implementação da função Jogar do módulo Partida.c
+18/06/17|	       2,5		|	  	  	Codificar módulo		| Alteração da função Jogar do módulo Partida.c, corrigindo erros.
+19/06/17|		2		|	  	  Revisar e codificar módulo		| Módulo de definição e implementação da Partida.
+20/06/17|		1		|	  	  Revisar e codificar módulo		| Módulo Partida.c, alteração da função Jogar visando tornar o programa mais robusto. 
+23/06/17|		1		|	  	 Diagnose e correção de erros		| Correção de erros encontrados durante a execução de uma partida.
+24/06/17|		7		|	  	 Diagnose e correção de erros		| Correção de erros encontrados durante a execução de uma partida.
+25/06/17|		2		|	  	  Revisar e codificar módulo		| Revisão e codificação dos módulos Partida.c e Partida.h 
+25/06/17|		1		|	  	  	Arquivos de texto		| Produção do arquivo texto explicando como testar o jogo.

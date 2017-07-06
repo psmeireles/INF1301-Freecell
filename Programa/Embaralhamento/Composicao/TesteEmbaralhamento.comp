@@ -1,0 +1,27 @@
+# Composicao do programa de embaralhamento
+
+[Diretorios]
+
+Nome        =	TesteEmbaralhamento
+PathDefault =	..\Fontes
+err         =	..\Produto
+obj			=	..\Objetos
+c			=	..\Fontes
+h			=	..\Fontes
+def			=	..\Tabelas
+
+[Modulos]
+TesteEmbaralhamento
+Embaralhamento
+Cartas
+Lista
+
+[BuildInicio]
+/OUT:..\Produto\TesteEmbaralhamento.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+[BuildFim]
+ArcaboucoTeste.lib
+
+[Fim]

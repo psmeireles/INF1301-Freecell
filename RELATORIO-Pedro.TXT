@@ -1,0 +1,22 @@
+					Programação Modular, Relatório individual
+Pedro Sousa Meireles - 1510962
+ 
+ DATA	|	HORAS TRABALHADAS	|   	      		TIPO TAREFA			|   DESCRIÇÃO TAREFA
+07/06/17|	       3,5		|	 	     Codificar módulo			| Módulo de definição e implementação da Partida.
+15/06/17|		2		|	 	     Codificar módulo			| Módulo de definição e implementação da Partida e módulo de implementação da interface do usuário.
+18/06/17|		1		|	 	     Codificar módulo			| Módulo de definição e implementação da Partida .
+19/06/17|		3		|	 	      Revisar módulo			| Revisão dos módulos Partida e Interface Usuário.
+20/06/17|		2		|	 	 Revisar e codificar módulo		| Revisão dos módulos Partida e Interface Usuário e implementação de novas funções nos módulos Espaços Extras, Sequências Visíveis e Sequências Ordenadas.
+20/06/17|		5		|		     Codificar módulo			| Implementação da lista auto-verificável, implementação das funções verificadoras e do módulo de testes da lista.
+20/06/17|		3		|		      Revisar módulo			| Correção de assertivas e tipos de retorno em todos os módulos.
+21/06/17|		3		|		     Codificar módulo			| Implementaçao dos contadores de passagem no módulo Lista.
+22/06/17|		3		|		      Revisar módulo			| Correção do módulo de testes da lista após as alterações feitas no módulo. Redação do Lista.count.
+23/06/17|		2		|		 Redigir script de teste		| Redação do script de testes da lista segundo critério de cobertura de arestas.
+23/06/17|		3		|		 Diagnose e correção de erros		| Correção dos erros no módulo lista.
+23/06/17|		3		|		      Revisar módulo			| Correção e atualização dos módulos e scripts de testes de todos os módulos exceto Partida e Interface Usuário.
+24/06/17|		7		|		 Diagnose e correção de erros		| Correção de erros encontrados durante a execução de uma partida.
+24/06/17|		3		|		 Redigir script de teste		| Redação do script de testes dos deturpadores e verificadores da lista.
+24/06/17|		1		|	 	 Revisar script de teste		| Revisão do script de testes do módulo Sequência Visível
+25/06/17|		3		|Diagnose e correção de erros e redigir script de teste | Correção de erros no programa em geral e redação do controle de vazamento e falta de memória no script de testes.
+25/06/17|		2		|		    Arquivos de texto			| Produção da especificação de requisitos, do LEIA-ME e descrição dos comandos de teste dos verificadores.
+26/06/17|		5		|Diagnose e correção de erros e organização do trabalho | Diagnose e correção dos últimos erros do jogo e organização final do trabalho.

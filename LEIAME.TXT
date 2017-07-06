@@ -1,0 +1,179 @@
+------ Autores ------
+
+- Renata Troccoli
+- Marcelo Costalonga
+- Pedro Meireles
+
+
+---------  Descrição do Programa  ------------
+
+Programa que implementa um jogo de FREE CELL. O módulo Lista foi devidamente modificado e os demais módulos testados através do arcabouço de testes automatizados.
+Todas as funcionalidades do jogo estão de acordo com o designado na especificação de requisitos.
+
+-------- Arquivos Fonte ----------
+
+			
+- Módulos de implementação:
+
+EMBARALHAMENTO.C
+CARTAS.C	
+LISTA.C
+SEQUENCIASORDENADAS.C
+SEQUENCIASVISIVEIS.C
+ESPACOSEXTRAS.C
+INTERFACEUSUARIO.C
+PARTIDA.C
+TST_ESPC.C	
+TESTELISTA.C
+TESTESEQORD.C
+TESTESEQVIS.C
+TESTEESPEXT.C
+TESTECARTAS.C
+TESTEEMBARALHAMENTO.C
+								
+			
+					
+- Módulos de definição:	
+				       
+EMBARALHAMENTO.H                                                        
+CARTAS.H							
+LISTA.H					
+SEQUENCIASORDENADAS.H					
+SEQUENCIASVISIVEIS.H						
+ESPACOSEXTRAS.H
+PARTIDA.H							
+LERPARM.H							
+GENERICO.H							
+TST_ESPC.H							
+CONTA.C								
+CESPDIN.H
+		
+
+	
+- Arcabouço de teste:			
+			
+ArcaboucoTeste.lib
+
+
+
+- Arquivo de declaração dos contadores:
+
+Lista.count
+
+
+
+- Arquivos de Script:						
+
+TesteEmbaralhamento.script
+TesteCartas.script
+TesteLista.script
+TesteListaCont.script                                                                
+TesteDeturpaLista.script
+TesteSeqOrd.script								
+TesteSeqVis.script								
+TesteEspExt.script
+	
+							
+
+- Arquivos de Log:						
+
+TesteLista.log								
+TesteListaDebug.log
+TesteDeturpaLista.log
+TesteEmbaralhamento.log								
+TesteCartas.log								
+TesteSeqOrd.log                                                                
+TesteSeqVis.log								
+TesteEspExt.log
+								
+
+
+- Arquivos de Definições:						
+
+IdTiposEspaco.def
+TiposEspacosLista.def
+
+		
+						
+- Arquivo Executável:						
+
+TesteLista.exe								
+TesteListaDebug.exe
+TesteEmbaralhamento.exe								
+TesteCartas.exe								
+TesteSeqOrd.exe                                                                
+TesteSeqVis.exe								
+TesteEspExt.exe
+TesteIU.exe
+TestePartida.exe
+
+
+
+- Arquivos Bat:		
+					
+Compila.bat                                                                
+CompilaTudo.bat                                                                
+CriaLib.bat                                                               
+GeraMake.bat                                                               
+GeraTudo.bat                                                               
+LimpaObj.bat                                                                
+LimpaTudo.bat                                                                
+Teste.bat                                                               
+TestaTudo.bat                                                               
+Tudo.bat                                                                
+vsvars32.bat
+
+
+
+- Arquivos de Relatório:
+					
+RELATORIO-Renata.txt								
+RELATORIO-Marcelo.txt								
+RELATORIO-Pedro.txt
+
+
+- Arquivo Leiame:						
+
+LEIAME.TXT
+
+
+
+- Arquivo de documentação:					
+
+N/A
+
+
+-------------  Modo de uso  -------------
+
+Extraia o conteudo do arquivo .zip
+
+Para compilar e em seguida fazer a execução dos testes:
+	1) Entre na pasta "Batches" de cada um dos módulos
+	2) Abra a linha de comando
+	3) Executar vsvars32.bat e tudo.bat
+	4) Executável com o programa será gerado em "Produto"
+
+Para executar através do executável:
+	1) Entre na pasta "Produto" de cada um dos módulos.
+	2) Abra a linha de comando
+	3) Execute o arquivo "TesteModulo.exe" referente ao módulo testado.
+	4) O comando de execução é:
+		TRAB4-*.exe /s../Scripts/TesteModulo.script
+	  onde * é o número correspondente ao módulo.
+	5) Para os módulos que não contêm scrips de teste, basta digitar TRAB4-*.exe.
+
+Para executar o jogo basta seguir um dos itens anteriores para o módulo InterfaceUsuario.
+
+
+Comentários:
+TRAB4-5 -> Lista sem debugs
+TRAB4-6 -> Lista com debugs
+
+
+CriaLib.bat não recria arcabouço.lib pois não há necessidade e não há estrutura de diretórios para isso. Ao invés disso, somente copia lib da pasta ..\ArcaboucoLib para a pasta ..\Composicao.
+
+Os módulos Partida e InterfaceUsuario não possuem arquivos de script porque não é possível fazer teste automatizado neles, uma vez que interagem diretamente com o usuário.
+
+Todos os módulos e a arquitetura tiveram consideráveis mudanças do T2 para o T4.
+Foram incluídas funções novas e modificadas as existentes em todos os módulos, tanto na implementação quanto na definição.
+Alguns equívocos foram corrigidos na arquitetura do programa.

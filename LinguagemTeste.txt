@@ -1,0 +1,209 @@
+Documentação dos comandos de teste:
+
+
+------ Cartas ------
+
+*     =criarcarta                  inxCarta   simbolo    naipe   cor   CondRetEsp
+Cria uma carta
+
+*     =destruircarta               inxCarta  
+Destrói a carta
+
+*     =simbolosucessor             inxCarta1  inxCarta2  CondRetEsp
+Verifica se o símbolo da carta 2 é sucessor do da 1
+
+*     =simboloantecessor           inxCarta1  inxCarta2  CondRetEsp
+Verifica se o símbolo da carta 2 é antecessor do da 1
+
+*     =ehprimeiracarta             inxCarta   CondRetEsp
+Verifica se a carta é um Ás
+
+*     =temmesmonaipe               inxCarta1  inxCarta2  CondRetEsp
+Verifica se as cartas têm mesmo naipe
+
+*     =temmesmacor                 inxCarta1  inxCarta2  CondRetEsp
+Verifica se as cartas têm mesma cor
+
+*     =cartaparastring             inxCarta   ValEsp     CondRetEsp
+Converte uma carta para string
+
+*     =stringparacarta		   string     inxCarta   CondRetEsp
+Converte uma string para carta
+
+*     =comparacartas		   inxCarta1  inxCarta2  CondRetEsp
+Verifica se duas cartas são iguais
+
+
+
+------ Embaralhamento ------
+
+*     =criarbaralho                 inxBaralho  CondRetEsp
+Cria um baralho
+
+*     =destruirbaralho              inxBaralho  
+Destrói um baralho
+
+*     =embaralhar		    inxBaralho  CondRetEsp
+Embaralha um baralho
+
+*     =obterlistacartas		    inxBaralho  inxLista CondRetEsp
+Obtém a lista de cartas do baralho
+
+*     =obtertam		    	    inxBaralho  ValEsp   CondRetEsp
+Obtém o tamanho do baralho
+
+*     =destruirlista		    inxLista
+Destrói uma lista auxiliar
+
+
+
+------ Espaços Extras ------
+
+*     =criarespext                  CondRetEsp
+Cria os espaços extras
+
+*     =obternumespextvazios	    ValEsp
+Obtém número de espaços extras vazios
+
+*     =destruirespext           
+Destrói os espaços extras
+
+*     =inscarta                     inxListaCartas CondRetEsp
+Insere uma carta em um espaço extra
+
+*     =removercarta	            StringCarta	   inxListaCartas CondRetEsp 
+Remove uma carta de um espaço extra
+
+*     =criarlistacartas		    inxListaCartas CondRetEsp
+Cria uma lista auxiliar
+
+*     =inscartalista		    inxListaCartas StringCarta    CondRetEsp
+Insere uma carta em uma lista auxiliar
+
+*     =destruirlistacartas	    inxListaCartas
+Destrói uma lista auxiliar
+
+
+
+------ Lista ------
+
+*     =criarlista                   inxLista  CondRetEsp
+Cria uma lista
+
+*     =destruirlista                inxLista  
+Destrói uma lista
+
+*     =esvaziarlista                inxLista  CondRetEsp
+Apaga todos os elementos de uma lista
+
+*     =inselemantes                 inxLista  string    CondRetEsp
+Insere um elemento antes do elemento corrente da lista
+
+*     =inselemapos                  inxLista  string    CondRetEsp
+Insere um elemento depois do elemento corrente da lista
+
+*     =obtervalorelem               inxLista  string    CondRetEsp
+Obtém o valor do elemento corrente da lista
+
+*     =obtertam                     inxLista  ValEsp    CondRetEsp
+Obtém o tamanho da lista
+
+*     =excluirelem                  inxLista  CondRetEsp
+Exclui o elemento corrente da lista
+
+*     =removerelem		    inxLista1 inxLista2 CondRetEsp
+Remove o elemento corrente da lista 1 e bota na lista 2
+
+*     =irinicio                     inxLista  CondRetEsp
+Elemento corrente passa a ser o inicial
+
+*     =irfinal                      inxLista  CondRetEsp
+Elemento corrente passa a ser o final
+
+*     =avancarelem                  inxLista  numElem   CondRetEsp
+Avança o elemento corrente em numElem unidades
+
+*     =procurarvalor	            inxLista  string	CondRetEsp
+Procura o elemento de valor string em uma lista
+
+*     =retirarlistaelem		    inxLista1  inxLista2   CondRetEsp
+Retira todos os elementos depois do corrente (inclusive) da lista 1 e bota na lista 2
+
+*     =concatenarlista		    inxLista1 inxLista2 CondRetEsp  
+Junta a lista 2 ao final da lista 1
+
+*	  Estes comandos somente podem ser executados se o modulo tiver sido
+*     compilado com _DEBUG ligado
+*
+*     =verificarcabeca	  	    inxLista  CondRetEsp
+Verifica se a cabeça da lista está estruturalmente correta. Verifica tipo,
+elementos corrente, inicial e final e inconsistências entre eles.
+
+*     =verificarlista		    inxLista  CondRetEsp
+Percorre a lista verificando a cabeça e cada um de seus elementos buscando
+alguma falha estrutural.
+
+*     =verificarmemoria
+Verifica os espacos da memória
+
+*     =deturparlista	 	    inxLista  idCodigoDeturpa 
+Executa a deturpação identificada por idCodigoDeturpa.
+idCodigoDeturpa = 1 -> Muda o tipo da cabeça da lista
+idCodigoDeturpa = 2 -> Faz o ponteiro para a origem ser NULL
+idCodigoDeturpa = 3 -> Faz o ponteiro para o elemento corrente ser NULL
+
+
+
+------ Sequência Ordenada ------
+
+*     =criarseqord                  inxSeqOrd      CondRetEsp
+Cria ma sequência ordenada
+
+*     =destruirseqord               inxSeqOrd
+Destrói uma sequência ordenada
+
+*     =inserircarta                 inxSeqOrd      inxListaCartas CondRetEsp
+Insere uma carta em uma sequência ordenada
+
+*     =criarlistacartas		    inxListaCartas CondRetEsp
+Cria uma lista auxiliar
+
+*     =inserircartalista	    inxListaCartas StringCarta	  CondRetEsp
+Insere uma carta em uma lista auxiliar
+
+*     =destruirlistacartas	    inxListaCartas
+Destrói uma lista auxiliar
+
+*     =obterlistacartas	 	    inxSeqOrd	   inxListaCartas CondRetEsp
+Obtêm a lista de cartas da sequência ordenada
+
+
+
+------ Sequência Visível ------
+
+*     =criarseqvis                  inxSeqVis      CondRetEsp
+Cria uma sequência visível
+
+*     =destruirseqvis               inxSeqVis
+Destrói uma sequência visível
+
+*     =inscartarestr                inxSeqVis      inxListaCartas  CondRetEsp
+Insere uma carta na sequência visível com restrição de cor e símbolo
+
+*     =inscartasemrestr             inxSeqVis      StringCarta	   CondRetEsp
+Insere uma carta na sequência visível sem restrição de cor e símbolo
+
+*     =removercarta	            inxSeqVis      StringCarta	   inxListaCartas	CondRetEsp 
+Remove uma carta de uma sequência visível para uma lista auxiliar
+
+*     =criarlistacartas		    inxListaCartas CondRetEsp
+Cria uma lista auxiliar
+
+*     =inscartalista		    inxListaCartas StringCarta	   CondRetEsp
+Insere uma carta em uma lista auxiliar
+
+*     =destruirlistacartas	    inxListaCartas
+Destrói uma lista auxiliar
+
+*     =obterlistacartas		    inxSeqVis	   inxListaCartas  CondRetEsp
+Obtém a lista de cartas da sequência visível

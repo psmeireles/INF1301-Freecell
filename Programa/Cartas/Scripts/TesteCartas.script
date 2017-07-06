@@ -1,0 +1,157 @@
+// Script:    TesteCartas.script
+// Autor:     Pedro Sousa Meireles
+// Data:      05/mai/2017
+// Propósito: Testar o módulo cartas
+//
+
+== Inicializar valores
+=declararparm   carta0  int 0
+=declararparm   carta1  int 1
+=declararparm   carta2  int 2
+=declararparm   carta3  int 3
+=declararparm   carta4  int 4
+=declararparm   carta5  int 5
+=declararparm   carta9  int 9
+
+=declararparm   S_A  int 0
+=declararparm   S_2  int 1
+=declararparm   S_3  int 2
+=declararparm   S_4  int 3
+=declararparm   S_5  int 4
+=declararparm   S_6  int 5
+=declararparm   S_7  int 6
+=declararparm   S_8  int 7
+=declararparm   S_9  int 8
+=declararparm   S_10 int 9
+=declararparm   S_J  int 10
+=declararparm   S_Q  int 11
+=declararparm   S_K  int 12
+
+=declararparm   Copas    int 0
+=declararparm   Espadas  int 1
+=declararparm   Ouros    int 2
+=declararparm   Paus     int 3
+
+=declararparm   Preto     int 0
+=declararparm   Vermelho  int 1
+
+=declararparm   OK              int  0
+=declararparm   FaltouMemoria   int  1
+=declararparm   CartaNaoExiste  int  2
+=declararparm   False           int  3
+
+
+
+== Criar a carta 0 e 9 (Ás de Paus)
+=criarcarta      carta0  S_A  Paus  OK
+=criarcarta		 carta4  S_A  Paus  OK
+=criarcarta		 carta5  S_A  Ouros  OK
+
+== Criar a carta 1 a partir de string (2 de Paus)
+=stringparacarta "P2"  carta1  OK
+
+== Testa carta para string (2 de Paus)
+=cartaparastring carta1 "P2" OK
+
+== Comparar cartas iguais
+=comparacartas	 carta0  carta4  OK
+
+== Comparar cartas mesmo naipe simbolo diferente
+=comparacartas	 carta0  carta1  False
+
+== Comparar cartas mesmo simbolo naipe diferente
+=comparacartas	 carta0  carta5  False
+
+== Comparar cartas naipe e simbolo diferentes
+=comparacartas	 carta1  carta5  False
+
+== Comparar cartas primeira nao existe
+=comparacartas	 carta9  carta0	 CartaNaoExiste
+
+==Comparar cartas segunda nao existe
+=comparacartas   carta0  carta9  CartaNaoExiste
+
+
+== Testa simbolo sucessor
+=simbolosucessor carta0 carta1 OK
+
+== Testa simbolo sucessor errado
+=simbolosucessor carta1 carta0 False
+
+== Testa simbolo sucessor primeiro nao existe
+=simbolosucessor carta3 carta0 CartaNaoExiste
+
+== Testa simbolo sucessor segundo nao existe
+=simbolosucessor carta0 carta3 CartaNaoExiste
+
+
+
+== Testa simbolo antecessor
+=simboloantecessor carta1 carta0 OK
+
+== Testa simbolo antecessor errado
+=simboloantecessor carta0 carta1 False
+
+== Testa simbolo antecessor primeiro nao existe
+=simboloantecessor carta3 carta0 CartaNaoExiste
+
+== Testa simbolo antecessor segundo nao existe
+=simboloantecessor carta0 carta3 CartaNaoExiste
+
+
+
+== Testa é primeira carta sendo Ás
+=ehprimeiracarta carta0 OK
+
+== Testa é primeira carta sem ser Ás
+=ehprimeiracarta carta1 False
+
+== Testa é primeira carta sem existir
+=ehprimeiracarta carta3 CartaNaoExiste
+
+== Criar carta 2 (J de Ouros)
+=criarcarta  carta2 S_J Ouros OK
+
+== Testa mesmo naipe
+=temmesmonaipe carta0 carta1 OK
+
+== Testa naipe diferente
+=temmesmonaipe carta0 carta2 False
+
+== Testa mesmo naipe primeira carta nao existe
+=temmesmonaipe carta3 carta0 CartaNaoExiste
+
+== Testa mesmo naipe segunda carta nao existe
+=temmesmonaipe carta0 carta3 CartaNaoExiste
+
+
+
+
+== Testa mesma cor com mesmo naipe
+=temmesmacor carta0  carta1  OK
+
+== Testa mesma cor com naipe diferente
+=temmesmacor carta0  carta2  False
+
+== Testa mesma cor primeira carta nao existe
+=temmesmacor carta3 carta0 CartaNaoExiste
+
+== Testa mesma cor segunda carta nao existe
+=temmesmacor carta0 carta3 CartaNaoExiste
+
+
+
+
+== Testa string para carta string invalida
+=stringparacarta "??"  carta9  CartaNaoExiste
+
+== Testa carta para string carta nao existe
+=cartaparastring carta9 "??" CartaNaoExiste
+
+
+== Destroi cartas
+=destruircarta carta0
+=destruircarta carta1
+=destruircarta carta2
+
+// fim

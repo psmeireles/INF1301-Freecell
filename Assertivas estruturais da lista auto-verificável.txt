@@ -1,0 +1,9 @@
+pLista->pFimLista->pProx == NULL
+pLista->pOrigemLista->pAnt == NULL
+pLista->id == idTipoLista
+pElemLista->id == idTipoElemLista
+pLista->pOrigemLista->pLista == pLista
+pLista->pFimLista->pLista == pLista
+pLista->pElemCorr->pLista == pLista
+pElemLista->pAnt->pProx == pElemLista
+pElemLista->pProx->pAnt == pElemLista

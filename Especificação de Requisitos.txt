@@ -1,0 +1,100 @@
+		Especificação de Requisitos- Free Cell
+
+mcc - Marcelo Costalonga Cardoso
+psm - Pedro Sousa Meireles
+rta - Renata Troccoli Achá
+
+	Requisitos Funcionais:
+
+Cartas:
+  Possuem uma cor, um naipe e um símbolo representando seu valor.
+
+Símbolos:
+  São os simbolos que ordenam as cartas. Em ordem crescente:
+  A < 2 < 3 < 4 < 5 < 6 < 7 < 8 < 9 < 10 < J < Q < K
+  O sucessor de um símbolo é o símbolo de valor imediatamente acima do seu, e antecessor, de valor imediatamente abaixo.  
+
+Naipes:
+  Existem 4 naipes, cada um contendo 13 cartas, com cada um dos símbolos acima. Os naipes são:
+  - Ouro e Copas (na cor vermelha)
+  - Paus e Espadas (na cor preta)
+
+Sequência Ordenada:
+  São os 4 espaços localizados no canto superior direito, que inicialmente estão vazios.
+  Cada um desses espaços deve ser preenchido em ordem crescente pelas cartas de um único naipe. Quando isso ocorrer, o objetivo do jogo é concluído.
+  Cartas não podem ser retiradas da sequência ordenada.
+
+Espaço extra:
+  São 4 espaços localizados no canto superior esquerdo, que inicialmente estão vazios.
+  Cada um desses espaços pode armazenar uma única carta qualquer, que poderá ser movida a qualquer momento, de acordo com regras citadas posteriormente.
+
+Sequência visível:
+  São os 8 espaços que recebem as cartas distribuídas no início da partida.
+  Cada um desses espaços pode conter uma pilha de cartas desordenadas, ou seja, com cor, simbolo e naipes em ordem aleatoria, no início da partida.
+  Só podem ser retiradas as cartas finais de uma sequência visível, com um critério a ser explicado posteriormente, e, após o início da partida, a carta, ou bloco de cartas, inserida deve ser antecessor e ter cor diferente da última carta da sequência visível.
+
+Tabuleiro:
+  O tabuleiro é composto por 8 sequências visíveis, 4 espaços extras e 4 sequências ordenadas.
+
+Mover uma carta:
+  O programa deve ser capaz de mover uma carta que está no final de uma sequência visível ou em um espaço extra para um outro espaço extra vazio ou para o fim de outra sequência visível, cuja última carta seja sua sucessora e tenha naipe de outra cor.
+  Além disso, o programa deve poder mover uma carta de um espaço extra ou do final de uma sequência visivel para uma sequência ordenada. Se a carta movida for um Ás, a sequência ordenada deve estar vazia para ser capaz de recebê-la.
+  Caso contrário, a carta movida deve ser posta sobre seu antecessor de mesmo naipe.
+  Cartas na sequência ordenada não podem ser movidas.
+
+Mover blocos de cartas:
+  O programa deve poder mover blocos ordenados de cartas com naipes de cores intercaladas.
+  O número de cartas no bloco a ser movido deve ser menor ou igual ao número de espaços extras vazios mais um.
+  O destino no bloco deve ser o final de uma sequência visível cuja última carta seja a sucessora da maior carta do bloco e tenha naipe de cor diferente.
+
+Embaralhamento:
+  O programa deve ser capaz de embaralhar e distribuir cartas em 4 sequências visíveis de 7 cartas e 4 sequências visíveis de 6 cartas no início de cada partida. 
+
+Partida:
+  Começa com o embaralhamento e espaços extras e sequência ordenada vazios. Termina quando todas as sequências ordenadas estiverem devidamente preenchidas.  
+ 
+Encerrar partida:
+  O programa deve ser capaz de encerrar uma partida a qualquer momento.
+ 
+Desfazer jogada (Desejável, mas não obrigatório)
+  O programa pode ser capaz de desfazer o último movimento que não seja desfazer uma jogada.
+
+Contagem de movimentos e recorde (Desejável, mas não obrigatorio)
+  O programa pode contar a quantidade de movimentos realizados em uma partida. Desfazer uma jogada conta como um movimento.
+  Pode também guardar as cinco partidas com menos movimentos.
+
+	Requisitos Não Funcionais:
+
+Robustez:
+  O programa deve ser robusto, ou seja, caso um comando seja inválido, será exibida uma mensagem para o jogador informando-o disso e será dada uma outra oportunidade de dar um novo comando.
+
+Reusabilidade:
+  Deve-se maximizar a reutilização de módulos para acelerar os processos de implementação e teste do projeto.
+  Em particular, deve-se reusar o módulo lista do arcabouço de teste automatizado.
+
+Corretude:
+  Todos os módulos devem ser testados individualmente, fazendo uso do arcabouço de testes automatizado.
+  Cada função deve ser testada em diversas circunstâncias, ou seja, utilizando diversos casos de teste.
+
+Manutenibilidade:
+  O código do programa deve seguir os padrões previamente estabelecidos, garantindo que o programa seja de facil interpretação e manutenção.
+
+Robustez:
+  A interface deve disponibilizar as possibilidades de ações e movimentos deos jogadores de forma robusta e não permitindo estados inválidos da execução do programa.  
+
+	Requisitos que não serão considerados:
+	   ->Funcionais:
+
+Autocomplete:
+  O programa não vai finalizar a partida automaticamente quando todas as cartas das sequências visíveis estiverem livres.
+
+Verificação de partida vencível:
+  O programa não irá verificar se é possivel vencer a partida em curso
+
+	   Não funcionais:
+
+Desempenho:
+  O programa não terá foco em otimizar desempenho
+
+Interface gráfica:
+  O programa não terá uma interface gráfica bem desenvolvida.

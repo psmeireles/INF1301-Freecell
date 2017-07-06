@@ -1,0 +1,31 @@
+# Composicao do programa de teste de uma partida
+
+[Diretorios]
+
+Nome        =	TestePartida
+PathDefault =	..\Fontes
+err         =	..\Produto
+obj			=	..\Objetos
+c			=	..\Fontes
+h			=	..\Fontes
+def			=	..\Tabelas
+
+[Modulos]
+TST_ESPC
+SequenciaOrdenada
+SequenciaVisivel
+EspacosExtras
+Embaralhamento
+Cartas
+Lista
+Partida
+
+[BuildInicio]
+/OUT:..\Produto\TestePartida.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+[BuildFim]
+ArcaboucoTeste.lib
+
+[Fim]

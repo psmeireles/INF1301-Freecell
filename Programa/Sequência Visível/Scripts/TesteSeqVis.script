@@ -1,0 +1,198 @@
+// Script:    TesteSeqVis.script
+// Autor:     Pedro Sousa Meireles
+// Data:      29/abr/2017
+// Prop�sito: Testar o modulo sequencia visivel
+
+== Inicializar valores
+=declararparm   seqvis0  int 0
+=declararparm   seqvis1  int 1
+=declararparm   seqvis2  int 2
+=declararparm   seqvis3  int 3
+=declararparm   seqvis4  int 4
+=declararparm   seqvis5  int 5
+=declararparm   seqvis6  int 6
+=declararparm   seqvis7  int 7
+=declararparm   seqvis8  int 8
+
+=declararparm   lista0   int 0
+=declararparm	lista1	 int 1
+=declararparm	lista2	 int 2
+=declararparm	lista3	 int 3
+=declararparm	lista4	 int 4
+=declararparm	lista5	 int 5
+=declararparm	lista6	 int 6
+=declararparm	lista7	 int 7
+=declararparm	lista8	 int 8
+=declararparm	lista9	 int 9
+
+=declararparm   OK                 int  0
+=declararparm   ListaVazia         int  1
+=declararparm   FimLista           int  2
+=declararparm   NaoAchou           int  3
+=declararparm   FaltouMemoria      int  4
+=declararparm   ImpossRetirarCarta int  5
+=declararparm   ImpossInserirCarta int  6
+=declararparm	ListaErrada		   int  7
+=declararparm	ListaNaoExiste	   int  9
+=declararparm	SeqVisNaoExiste	   int  10
+
+== Testar funcoes passando NULL
+=inscartasemrestr	seqvis0	   "CA"   SeqVisNaoExiste
+=inscartarestr		seqvis0	   lista0 SeqVisNaoExiste
+=removercarta		seqvis0	   "CA"	  lista0 SeqVisNaoExiste
+=obterlistacartas	seqvis0	   lista0 SeqVisNaoExiste
+
+== Criar a sequencia visivel 0
+=criarseqvis     seqvis0        OK
+
+== Testar passando lista NULL
+=inscartarestr		seqvis0	   lista0 ImpossInserirCarta
+
+== Inserir carta sem retricao em sequencia visivel vazia
+=inscartasemrestr seqvis0  "CA"   OK
+
+== Inserir carta sem restricao em sequencia visivel sobre carta "errada"
+=inscartasemrestr seqvis0  "C7"   OK
+
+== Inserir carta sem restricao em sequencia visivel sobre carta "certa"
+=inscartasemrestr seqvis0  "P8"	  OK
+
+== Criar listas de cartas 0 e 1
+=criarlistacartas lista0  OK
+=criarlistacartas lista1  OK
+
+== Remover uma unica carta
+=removercarta	  seqvis0  "P8"  lista0  OK
+
+== Destruir lista 0
+=destruirlistacartas lista0
+
+== Remover duas cartas que nao podem ser removidas
+=removercarta	  seqvis0  "CA"  lista1  ImpossRetirarCarta
+
+== Destruir lista 1
+=destruirlistacartas lista1
+
+== Criar lista de cartas 2
+=criarlistacartas lista2 OK
+
+== Remover uma carta que nao esta na sequencia visivel
+=removercarta	  seqvis0  "OD"	 lista2  NaoAchou
+
+== Destruir lista 2
+=destruirlistacartas lista2
+
+== Destruir sequencia visivel 0
+=destruirseqvis  seqvis0
+
+== Criar lista 3 com 3 cartas certas
+=criarlistacartas lista3  OK
+=inscartalista	  lista3  "CD"  OK
+=inscartalista	  lista3  "P9"  OK
+=inscartalista	  lista3  "O8"  OK
+
+== Criar sequencias visiveis 1 (vazia), 2 (J vermelho), 3 (J preto), 4 (2 vermelho)  5 (2 preto)
+=criarseqvis  	  seqvis1  OK
+=criarseqvis      seqvis2  OK
+=inscartasemrestr seqvis2  "OJ"	  OK
+=criarseqvis      seqvis3  OK
+=inscartasemrestr seqvis3  "PJ"	  OK
+=criarseqvis      seqvis4  OK
+=inscartasemrestr seqvis4  "C2"	  OK
+=criarseqvis      seqvis5  OK
+=inscartasemrestr seqvis5  "E2"	  OK
+
+== Inserir 3 cartas com restricao em sequencia visivel vazia
+=inscartarestr  seqvis1  lista3  OK
+
+== Destruir sequencia visivel 1
+=destruirseqvis       seqvis1
+
+== Criar lista 4 com 3 cartas certas
+=criarlistacartas lista4  OK
+=inscartalista	  lista4  "CD"  OK
+=inscartalista	  lista4  "P9"  OK
+=inscartalista	  lista4  "O8"  OK
+
+== Inserir 3 cartas com restricao em sequencia visivel com simbolo certo e cor errada
+=inscartarestr  seqvis2  lista4  ImpossInserirCarta
+
+== Destruir sequencia visivel
+=destruirseqvis       seqvis2
+
+== Criar lista 5 com 3 cartas certas
+=criarlistacartas lista5  OK
+=inscartalista	  lista5  "CD"  OK
+=inscartalista	  lista5  "P9"  OK
+=inscartalista	  lista5  "O8"  OK
+
+== Inserir 3 cartas com restricao em sequencia visivel com simbolo certo e cor certa
+=inscartarestr  seqvis3  lista5  OK
+
+== Destruir sequencia visivel
+=destruirseqvis       seqvis3
+
+== Criar lista 6 com 3 cartas certas
+=criarlistacartas lista6  OK
+=inscartalista	  lista6  "CD"  OK
+=inscartalista	  lista6  "P9"  OK
+=inscartalista	  lista6  "O8"  OK
+
+== Inserir 3 cartas com restricao em sequencia visivel com simbolo errado e cor errada
+=inscartarestr  seqvis4  lista6  ImpossInserirCarta
+
+== Destruir lista e sequencia visivel
+=destruirseqvis       seqvis4
+=destruirlistacartas  lista6
+
+== Criar lista 7 com 3 cartas certas
+=criarlistacartas lista7  OK
+=inscartalista	  lista7  "CD"  OK
+=inscartalista	  lista7  "P9"  OK
+=inscartalista	  lista7  "O8"  OK
+
+== Inserir 3 cartas com restricao em sequencia visivel com simbolo errado e cor certa
+=inscartarestr  seqvis5  lista7  ImpossInserirCarta
+
+== Destruir lista e sequencia visivel
+=destruirseqvis       seqvis5
+=destruirlistacartas  lista7
+
+== Criar lista 8 com 3 cartas erradas (simbolo)
+=criarlistacartas lista8  OK
+=inscartalista	  lista8  "CD"  OK
+=inscartalista	  lista8  "P3"  OK
+=inscartalista	  lista8  "O8"  OK
+
+== Criar lista 9 com 3 cartas erradas (cor)
+=criarlistacartas lista9  OK
+=inscartalista	  lista9  "CD"  OK
+=inscartalista	  lista9  "O9"  OK
+=inscartalista	  lista9  "O8"  OK
+
+== Criar sequencias visiveis 6 e 7
+=criarseqvis  seqvis6  OK
+
+=criarseqvis  seqvis7  OK
+=inscartasemrestr seqvis7  "PJ"	  OK
+
+== Destruir listas e sequencias visiveis
+=destruirseqvis seqvis6
+=destruirseqvis seqvis7
+=destruirlistacartas lista8
+=destruirlistacartas lista9
+
+== Criar sequencia visivel 8
+=criarseqvis  seqvis8  OK
+=inscartasemrestr seqvis8  "P3"	  OK
+=inscartasemrestr seqvis8  "O2"	  OK
+=inscartasemrestr seqvis8  "EA"	  OK
+
+== Remover lista de cartas
+=removercarta	  seqvis8  "P3"  lista0  OK
+
+== Destruir lista 0 e sequencia visivel 8
+=destruirlistacartas lista0
+=destruirseqvis seqvis8
+
+// fim

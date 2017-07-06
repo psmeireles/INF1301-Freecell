@@ -1,0 +1,12 @@
+					Programação Modular, Relatório individual
+
+Renata Troccoli Noronha Macedo Achá - 1511377
+ 
+ DATA	|	HORAS TRABALHADAS	|   	      		TIPO TAREFA			|   DESCRIÇÃO TAREFA
+14/06/17|	        1		|	 	          Estudar                       | Estudo de verificadores e deturpadores.
+23/06/17|		2		|	 	     Codificar módulo			| Módulo de implementação da Lista: Função DeturparLista.
+24/06/17|		1		|	 	     Codificar módulo			| Módulo de teste da Lista: Teste para deturpar lista.
+24/06/17|		1		|	 	      Revisar módulo			| Revisão do módulo Lista.
+24/06/17|		2		|	 	       Modelo Físico  		        | Montar Modelo físico e passar para o computador.
+26/06/17|		1		|		    Corrigir Arquitetura		| Correção da Arquitetura para ajustar para o T4.
+26/06/17|		1		|	           Estrutura dos Módulos		| Completar a Estrutura dos Módulos com as funções adicionadas.

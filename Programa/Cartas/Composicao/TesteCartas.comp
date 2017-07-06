@@ -1,0 +1,25 @@
+# Composicao do programa de teste de cartas
+
+[Diretorios]
+
+Nome        =	TesteCartas
+PathDefault =	..\Fontes
+err         =	..\Produto
+obj			=	..\Objetos
+c			=	..\Fontes
+h			=	..\Fontes
+def			=	..\Tabelas
+
+[Modulos]
+TesteCartas
+Cartas
+
+[BuildInicio]
+/OUT:..\Produto\TesteCartas.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+[BuildFim]
+ArcaboucoTeste.lib
+
+[Fim]

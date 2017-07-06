@@ -1,0 +1,61 @@
+
+mcc - Marcelo Costalonga Cardoso
+psm - Pedro Sousa Meireles
+rta - Renata Troccoli Achá
+
+	-> Instruções de como testar o jogo:
+
+- Abra a pasta contendo a solução do projeto e execute o programa. Digite 'c' para começar uma partida.
+
+- Ao começar uma partida as cartas serão embaralhadas, distribuidas pelo tabuleiro e este será exibido.
+
+- Inicialmente haverá uma linha com quatro números zeros à esquerda e quatro numeros zeros à direita. Eles
+representam os espaços extras e as sequências ordenadas, respectivamente. E abaixo haverá mais oito linhas,
+As quatro primeiras linhas irão conter 7 cartas, em cada uma e as quatro últimas apenas 6 em cada. Cada uma
+dessas linhas corresponde a uma sequência visível. Assim a primeira carta de uma sequência visível é a carta
+mais à esquerda em uma linha, e a última carta, é a mais à direita daquela linha.
+
+- As cartas estão representadas por dois caracteres: 
+	Uma letra maiúscula ('E', 'P', 'O', 'C'), identificando seu naipe.
+	E um número de 2 à 9, ou outra letra maiúscula ('A', 'D', 'J', 'Q', 'K') identificando seu símbolo. 
+
+Por exemplo: 
+	A carta 'ED', corresponde a carta do naipe Espadas e símbolo 10.
+	A carta 'C3', corresponde a carta do naipe Copas e símbolo 3.
+	
+- Digite 'j' para fazer uma jogada ou 't' para terminar a partida.
+
+- Caso tenha escolhido fazer uma jogada, em seguida será pedido para digitar a carta que deseja mover, identificada pelo padrão acima. 
+Depois deve ser indicado a onde essa carta está, se ela estiver em um espaço extra digite 'e', se estiver em uma sequência visível
+digite 'v' e neste caso deverá ser indicada, por um número inteiro em qual sequência visível a carta se encontra
+(0 refere-se a primeira linha e 7 refere-se a última).
+
+- Depois deve ser indicado o destino da carta: digite 'e' para move-la para um espaço extra, 'v' para move-la para
+uma sequência visível ou 'o' para uma sequência ordenada.
+
+- Para mover uma única carta que está em uma sequência visível, esta deve ser a última carta da sequência (posicionada mais a direita numa 
+linha). Para mover uma sequência de cartas, deve ser indicada a carta de maior símbolo, dessa forma se a sequência satisfazer as restrições 
+de símbolo e cor, todas as cartas à direita da carta escolhida também serão movimentadas, se o tamanho de cartas respeitar a restrição do 
+número de espaços extras vazio, esta é, o número máximo de cartas que podem ser movidas de uma vez é igual à 1+N (sendo o número de espaços
+extras vazios), ou seja com todos os espaços extras vazios podem ser movidas 5 cartas de uma vez.
+
+  OBS: As restrições de cor e símbolo de uma sequência de cartas são que, uma sequência válida deve conter cartas ordenadas em ordem 
+decresente (carta mais a esquerda em uma sequência deve ser a de maior símbolo) por símbolo e cores alternadas (sendo os naipes de Paus e
+Espadas de cor preta, e Copas e Ouros de cor vermelha). 
+       Ordem decrescente dos símbolos:{ 'K', 'Q', 'J', 'D', '9', '8', '7', '6', '5', '4', '3', '2', 'A' }
+ 
+
+- Caso seja digitado algum comando inválido (caracteres ou números diferentes dos citados acima), será exibida uma mensagem de erro pedindo
+para ele digitar novamente. Caso o usuário tente fazer uma movimento inválido, o programa irá exibir uma mensagem de erro e pedir para 
+realizar uma nova jogada.
+
+- O usuário pode cancelar uma jogada sempre que estiver escolhendo a carta que deseja mover, o local onde a carta se encontra, ou
+o local de destino da carta, digitando 'x'.
+
+- Movimentos não são válidos quando: 
+	Tenta-se mover uma carta que não se encontra no local onde foi indicada.
+	Tenta-se mover uma carta ou uma sequência de cartas sem respeitar as restrições de símbolo, cor e quantidade de espaços vazios.
+	Tenta-se mover uma carta para um espaço extra, com todos os espaços extras preenchidos.
+	Tenta-se mover uma carta para uma sequência ordenada sem respeitar as restrições das sequências ordenadas (se a sequência estiver
+	vazia a carta deve ter o símbolo 'A', se ela não estiver vazia a carta deve ter símbolo sucessor e mesmo naípe da última carta 
+ 	inserida na sequência ordenada). 

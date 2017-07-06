@@ -1,0 +1,104 @@
+// Script:    TesteSeqOrd.script
+// Autores:   Pedro Sousa Meireles
+// Data:      07/abr/2017
+// Proposito: Testar o modulo espacos extras
+
+== Inicializar valores
+=declararparm   lista0   int 0
+=declararparm	lista1	 int 1
+=declararparm	lista2	 int 2
+=declararparm	lista3	 int 3
+=declararparm	lista4	 int 4
+=declararparm	lista5	 int 5
+=declararparm	lista6	 int 6
+=declararparm	lista7	 int 7
+=declararparm	lista8	 int 8
+
+=declararparm   OK                 int  0
+=declararparm   ListaVazia         int  1
+=declararparm   ListaNaoExiste     int  2
+=declararparm   NaoAchou		   int  3
+=declararparm   FaltouMemoria      int  4
+=declararparm   ImpossRetirarCarta int  5
+=declararparm   ImpossInserirCarta int  6
+=declararparm   EspExtNaoExiste    int  8
+
+== Tentar obter lista de cartas com espext NULL
+=obterlistacartas lista0 EspExtNaoExiste
+
+
+== Criar os espacos extras
+=criarespext     OK
+=obternumespextvazios 4
+
+
+== Testar remover carta com espacos extras vazios
+=removercarta	"CA"	lista0	ListaVazia
+
+
+== Testar inserir 1 carta
+=criarlistacartas lista0	OK
+=inscartalista    lista0    "CA"  OK
+=inscarta		  lista0	OK
+=obternumespextvazios 3
+
+
+== Testar inserir mais de 1 carta de uma vez
+=criarlistacartas lista1	OK
+=inscartalista    lista1    "ED"  OK
+=inscartalista	  lista1    "PK"  OK
+=inscarta		  lista1	ImpossInserirCarta
+=destruirlistacartas lista1 
+
+
+== Inserir mais 3 cartas
+=criarlistacartas lista2	OK
+=inscartalista    lista2    "ED"  OK
+=criarlistacartas lista3	OK
+=inscartalista	  lista3    "PK"  OK
+=criarlistacartas lista4	OK
+=inscartalista	  lista4    "OA"  OK
+=inscarta		  lista2    OK
+=obternumespextvazios 2
+=inscarta		  lista3    OK
+=obternumespextvazios 1
+=inscarta		  lista4    OK	
+=obternumespextvazios 0
+
+
+== Testar inserir carta com espaços extras cheios
+=criarlistacartas lista5	OK
+=inscartalista	  lista5    "E2"  OK
+=inscarta		  lista5    ImpossInserirCarta
+=destruirlistacartas lista5
+
+
+== Testar remover carta existente do final 
+=criarlistacartas lista6	OK
+=removercarta 	  "OA"  lista6 OK
+=obternumespextvazios 1
+
+== Testar remover carta existente do meio
+=removercarta 	  "PK"  lista6 OK
+=obternumespextvazios 2
+
+== Testar remover carta existente do inicio
+=removercarta 	  "ED"  lista6 OK
+=obternumespextvazios 3
+
+== Testar remover carta inexistente
+=criarlistacartas lista7 	OK
+=removercarta 	  "OJ"  lista7 NaoAchou
+=obternumespextvazios 3
+
+== Testar obter lista de cartas
+=obterlistacartas lista8    OK
+
+== Destruir os espacos extras e as listas 6 e 7
+=destruirlistacartas lista6
+=destruirlistacartas lista7
+=destruirlistacartas lista8
+=destruirespext
+
+
+//fim
